@@ -5,12 +5,9 @@ class Solution {
         while(l<u) {
             m=l+(u-l)/2;
             if(nums[m]>nums[u]) l=m+1;
-            else if(nums[m]<=nums[u] && nums[m]!=nums[l]) u=m;
-            else {
-                l+=1; u-=1;
-            }
+            else if(nums[m]<nums[u]) u=m;
+            else    u--;
         }
-        System.out.println(u+" "+l+" "+m);
         return nums[u];
     }
 }
